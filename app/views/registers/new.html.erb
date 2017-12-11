@@ -1,0 +1,30 @@
+<h2>Register for Newletter!</h2>
+
+<%= form_for (Register.new) do |f| %>
+
+    <div class="field">
+      <%= f.label :first_name %><br/>
+      <%= f.text_field :first_name, class: 'span5', :placeholder => "Your First name..", required: true %>
+    </div><br>
+
+    <div class="field">
+      <%= f.label :last_name %><br/>
+      <%= f.text_field :first_name, class: 'span5', :placeholder => "Your Last name..", required: true %>
+    </div><br>
+
+    <div class="field">
+      <%= f.label :phone_number%><br/>
+      <%= f.text_field :phone_number, :placeholder => "Must contain 10 digits..", pattern: '^[ ()+]*([0-9][ ()+]*){10}$'%>
+    </div><br>
+
+    <div class="field">
+      <%= f.label :email %><br/>
+      <%= f.email_field :email, :placeholder => current_user,  disabled: true %>
+    </div><br>
+
+    <div class="actions">
+      <%= f.submit "Register", remote: true %>
+      <%= link_to "Cancel", root_path, :class => 'btn' %>
+    </div>
+<% end %>
+

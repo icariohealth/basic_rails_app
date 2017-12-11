@@ -1,0 +1,32 @@
+<div  class="row">
+  <div class="card si-box si-form">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-md-auto">
+          <h2>Log in</h2>
+
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), :validate => true, :class => 'form-signin') do |f| %>
+              <div class="field row col-md-12">
+                <%= f.label :email %><br/>
+                <%= f.email_field :email, :placeholder => "user@domain.net", type: 'email',  class: 'validate[required, custom[email]]', required: true %>
+              </div>
+
+              <div class="field row col-md-12">
+                <%= f.label :password %><br/>
+                <%= f.password_field :password, :placeholder => "Your Password...", class: 'validate[required]', required: true %>
+              </div>
+
+              <br>
+
+              <div class="actions row col-md-12">
+                <%= f.submit "Log in" %>
+              </div>
+          <% end %>
+          <br>
+          <%= render "users/shared/links" %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
