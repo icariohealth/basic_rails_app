@@ -34,6 +34,18 @@ gem 'haml-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use devise; too create a customized authentication
+# and registration process
+gem 'devise'
+gem 'responders', '~> 2.4'
+gem 'devise_invitable', '~> 1.7', '>= 1.7.2'
+
+#Use Bootstrap; front-end use
+gem 'jquery-rails'
+gem 'popper_js'
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'font-awesome-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -50,7 +62,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 

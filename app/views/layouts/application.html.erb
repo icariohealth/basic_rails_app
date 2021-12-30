@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>BasicRailsApp</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>BasicRailsApp</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<%= image_tag 'novuhealth_logo.png'%>
+
+<% flash.each do |name, msg| %>
+    <% if (!(msg.nil?)) and (!(name.to_s.eql?("timeout"))) %>
+        <div class ="alert-alert-<%= name == "notice" ? "success" : "error" %>">
+          <!--<a class="close" data-dismiss="alert">&times;</a>-->
+          <%= msg%>
+        </div>
+    <% end %>
+<% end %>
+<br/>
+<%= content_for?(:content)? yield(:content) : yield %>
+</body>
 </html>
